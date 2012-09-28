@@ -1,0 +1,15 @@
+{
+  "name": "editable-number",
+  "repo": "componitable/editable-number",
+  "description": "Inline editable number with optional formatting and units (perfect for money fields etc.)",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/emitter": "*",
+    "componitable/editable": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js"
+  ]
+}
