@@ -35,9 +35,14 @@ function edit(element, options) {
     var edit = element.getElementsByTagName('input')[0];
     if (options.maintainSize === true) {
         var editDimensions = editable.transformDimensions(edit, dimensions);
+        var spans = element.getElementsByTagName('span');
+        for (var i = 0; i < spans.length; i++) {
+            editDimensions.width -= editable.dimensions(spans[i]).width;
+            editable.transformDimensions(spans[i], editDimensions);
+        };
         //todo: subtract prefix and suffix width
         edit.style.width = editDimensions.width + 'px';
-        edit.style.height = editDimensions.height + 'px';
+        if (!(options.prefix || options.suffix)) edit.style.height = editDimensions.height + 'px';
         oldStyle = {width: element.style.width, height: element.style.height};
         element.style.width = dimensions.width + 'px';
         element.style.height = dimensions.height + 'px';
