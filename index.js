@@ -11,7 +11,7 @@ function makeEditable(elements, options) {
     options.prefix = options.prefix || options.format.prefix || false;
     options.suffix = options.suffix || options.format.suffix || false;
     options.unformat = options.unformat || options.format.unformat || function (v) { return v; }
-    options.validate = options.validate || options.format.validate || function (v) { return /^\d*\.\d*$/g.test(v); }
+    options.validate = options.validate || options.format.validate || function (v) { return /^\d*\.?\d*$/g.test(v); }
     options.maintainSize = options.maintainSize || false;
     editable.click(elements, function (element) {
         if (element.getAttribute('data-in-edit-mode') == 'true') return;
