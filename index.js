@@ -28,7 +28,7 @@ function edit(element, options) {
         dimensions = editable.dimensions(element);
     }
     emit('pre-begin-edit', element);
-    var value = element.textContent.trim().replace(/[^\d\.]/g, '');
+    var value = element.textContent.trim().replace(/[^\d\.\-]/g, '');
 
     element.innerHTML = html(value, options);
 
